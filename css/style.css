@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+header{
+    text-align: center;
+    position: relative;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+#meter {
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+}
+
+#controller {
+    margin-top: 20px;
+}
