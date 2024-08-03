@@ -4,57 +4,25 @@
 <head>
     <title>胸糞メーター</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/earlyaccess/nikukyu.css" rel="stylesheet">
     <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script>
-        google.charts.load('current', { packages: ['gauge'] });
-        google.charts.setOnLoadCallback(drawChart);
-
-        var meter_data, chart;
-        const meter_options = {
-            width: 400, height: 200,
-            redFrom: 90, redTo: 100,
-            yellowFrom: 75, yellowTo: 90,
-            minorTicks: 5,
-            min: 0
-        };
-
-        function drawChart() {
-            meter_data = google.visualization.arrayToDataTable([
-                ['Label', 'Value'],
-                ['😠', 0],
-            ]);
-            chart = new google.visualization.Gauge(document.getElementById('meter'));
-            chart.draw(meter_data, meter_options);
-        }
-
-        function modMunakuso(value) {
-            let next_value = meter_data.getValue(0, 1) + value;
-            meter_data.setValue(0, 1, next_value < 100 ? next_value > 0 ? next_value : 0 : 100);
-            chart.draw(meter_data, meter_options);
-        }
-
-        function resetMunakuso() {
-            meter_data.setValue(0, 1, 0);
-            chart.draw(meter_data, meter_options);
-
-        }
-    </script>
+    <script src="js/munakuso.js"></script>
 </head>
 
 <body>
-    <header>
-        <p>胸糞メーター</p>
-    </header>
     <div id="container">
+        <div id="meter-title">
+            <a>むなくそメーター</a>
+        </div>
         <div id="meter"></div>
         <div id="controller">
-            <input type="button" id="+10" value="+10" onclick="modMunakuso(10)">
-            <input type="button" id="+5" value="+5" onclick="modMunakuso(5)">
-            <input type="button" id="+1" value="+1" onclick="modMunakuso(1)">
-            <input type="button" id="reset" value="reset" onclick="resetMunakuso()">
-            <input type="button" id="-1" value="-1" onclick="modMunakuso(-1)">
-            <input type="button" id="-5" value="-5" onclick="modMunakuso(-5)">
-            <input type="button" id="-10" value="-10" onclick="modMunakuso(-10)">
+            <input type="button" class="inc_dec_button btn--blue" id="+10" value="+10" onclick="modMunakuso(10)">
+            <input type="button" class="inc_dec_button btn--blue" id="+5" value="+5" onclick="modMunakuso(5)">
+            <input type="button" class="inc_dec_button btn--blue" id="+1" value="+1" onclick="modMunakuso(1)">
+            <input type="button" class="reset_button btn--radius" id="reset" value="reset" onclick="resetMunakuso()">
+            <input type="button" class="inc_dec_button btn--red" id="-1" value="-1" onclick="modMunakuso(-1)">
+            <input type="button" class="inc_dec_button btn--red" id="-5" value="-5" onclick="modMunakuso(-5)">
+            <input type="button" class="inc_dec_button btn--red" id="-10" value="-10" onclick="modMunakuso(-10)">
         </div>
     </div>
     <footer></footer>

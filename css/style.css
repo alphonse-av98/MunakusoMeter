@@ -1,10 +1,5 @@
 @charset "UTF-8";
 
-header{
-    text-align: center;
-    position: relative;
-}
-
 body {
     background-color: greenyellow;
     display: flex;
@@ -12,6 +7,12 @@ body {
     flex-direction: column;
     text-align: center;
     position: relative;
+}
+
+#meter-title{
+    font-size: 25px;
+    font-family: 'Nikukyu';
+    color: #FF8F00;
 }
 
 #meter {
@@ -22,4 +23,75 @@ body {
 
 #controller {
     margin-top: 20px;
+}
+
+.inc_dec_button {
+    font-size: 1.4rem;
+    padding: 1rem 1rem;
+    display: inline-block;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px 0;
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+.btn--blue{
+    color: #fff;
+    background-color: #0000FF;
+}
+
+.btn--blue:hover{
+    color: #fff;
+    background: #108FFF;
+}
+
+.btn--red {
+    color: #fff;
+    background-color: #FF0000;
+}
+
+.btn--red:hover {
+    color: #fff;
+    background: #FF8F10;
+}
+
+.reset_button {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+    font-size: 1rem;
+    font-weight: 40;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+    color: #fff;
+    background-color: #888888;
+}
+
+.reset_button:hover {
+    color: #fff;
+    background: #8F8F8F;
+}
+
+.btn--radius {
+    border-radius: 100vh;
 }
